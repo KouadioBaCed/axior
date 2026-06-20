@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 800" fill="none" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bloom" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#5f9a69" stop-opacity="0.22" />
+      <stop offset="1" stop-color="#407A4B" stop-opacity="0" />
+    </linearGradient>
+    <linearGradient id="tower" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2c5235" stop-opacity="0.16" />
+      <stop offset="1" stop-color="#2c5235" stop-opacity="0.02" />
+    </linearGradient>
+    <linearGradient id="towerAlt" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#407A4B" stop-opacity="0.20" />
+      <stop offset="1" stop-color="#407A4B" stop-opacity="0.02" />
+    </linearGradient>
+  </defs>
+
+  <!-- Soft brand blooms for depth -->
+  <circle cx="1240" cy="120" r="360" fill="url(#bloom)" />
+  <circle cx="220" cy="640" r="300" fill="url(#bloom)" opacity="0.7" />
+
+  <!-- Blueprint diagonals -->
+  <g stroke="#407A4B" stroke-opacity="0.10" stroke-width="1.5">
+    <path d="M-40 720 L560 120" />
+    <path d="M120 800 L760 160" />
+    <path d="M980 -20 L1480 480" />
+    <path d="M1080 -20 L1480 380" />
+  </g>
+
+  <!-- Registration / blueprint marks -->
+  <g stroke="#407A4B" stroke-opacity="0.22" stroke-width="1.5">
+    <path d="M300 200 h22 M311 189 v22" />
+    <path d="M1120 540 h22 M1131 529 v22" />
+    <path d="M760 90 h18 M769 81 v18" />
+  </g>
+
+  <!-- Architectural skyline -->
+  <g>
+    <rect x="812" y="512" width="72" height="288" fill="url(#tower)" />
+    <rect x="894" y="452" width="56" height="348" fill="url(#towerAlt)" />
+    <rect x="958" y="556" width="84" height="244" fill="url(#tower)" />
+    <rect x="1052" y="408" width="62" height="392" fill="url(#towerAlt)" />
+    <rect x="1124" y="520" width="48" height="280" fill="url(#tower)" />
+    <rect x="1182" y="360" width="92" height="440" fill="url(#towerAlt)" />
+    <rect x="1284" y="496" width="58" height="304" fill="url(#tower)" />
+    <rect x="1352" y="440" width="100" height="360" fill="url(#towerAlt)" />
+  </g>
+
+  <!-- Floor lines on the taller towers -->
+  <g stroke="#ffffff" stroke-opacity="0.14" stroke-width="1.25">
+    <path d="M1052 452 h62 M1052 506 h62 M1052 560 h62 M1052 614 h62 M1052 668 h62" />
+    <path d="M1182 408 h92 M1182 462 h92 M1182 516 h92 M1182 570 h92 M1182 624 h92 M1182 678 h92" />
+    <path d="M894 500 h56 M894 556 h56 M894 612 h56 M894 668 h56" />
+    <path d="M1352 488 h100 M1352 544 h100 M1352 600 h100 M1352 656 h100" />
+  </g>
+
+  <!-- Isometric cube echo of the AXIOR mark -->
+  <g stroke="#407A4B" stroke-opacity="0.18" stroke-width="1.5" fill="none">
+    <path d="M640 250 l64 -34 l64 34 l0 74 l-64 34 l-64 -34 z" />
+    <path d="M640 250 l64 34 l64 -34 M704 284 l0 74" />
+  </g>
+</svg>

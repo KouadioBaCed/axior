@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --brand: #407a4b;
+  --graphite: #636462;
+}
+
+@layer base {
+  * {
+    @apply border-graphite-100;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-white text-graphite-700 antialiased dark:bg-graphite-950 dark:text-graphite-200;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    @apply bg-brand/20 text-brand-900;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display text-graphite-900 dark:text-white;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+}
+
+@layer components {
+  .section {
+    @apply py-20 sm:py-24 lg:py-28;
+  }
+
+  /* Alternating section surfaces — give the page rhythm instead of all-white. */
+  .section-tint {
+    @apply bg-sand-50 dark:bg-graphite-900/30;
+  }
+
+  .section-muted {
+    @apply bg-graphite-50/60 dark:bg-graphite-900/40;
+  }
+
+  .section-brand {
+    @apply bg-brand-50/60 dark:bg-brand-950/20;
+  }
+
+  .card-surface {
+    @apply rounded-2xl border border-graphite-100 bg-white shadow-soft dark:border-white/10 dark:bg-graphite-900;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-brand to-brand-700 bg-clip-text text-transparent;
+  }
+
+  /* Small uppercase label used above section titles. */
+  .eyebrow {
+    @apply inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 text-xs font-semibold uppercase tracking-[0.18em];
+  }
+
+  .grid-backdrop {
+    background-image: var(--tw-bg-grid, none);
+    background-size: 56px 56px;
+  }
+}
+
+/* Custom scrollbar — subtle, premium */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #c9cfca;
+  border-radius: 999px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #9fb0a4;
+  background-clip: content-box;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
