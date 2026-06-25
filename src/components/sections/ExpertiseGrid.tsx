@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
 import { IconArrowRight, IconCheck } from "@/components/icons";
@@ -42,48 +43,61 @@ export function ExpertiseGrid({
             <motion.article key={e.slug} variants={fadeUp}>
               <Link
                 href={`/domaines-expertise/${e.slug}`}
-                className="card-surface group relative flex h-full flex-col overflow-hidden p-7 transition-all duration-300 hover:-translate-y-1.5 hover:border-brand-200 hover:shadow-card"
+                className="card-surface group relative flex h-full flex-col overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:border-brand-200 hover:shadow-card"
               >
-                {/* Coloured accent bar per sector */}
-                <span
-                  aria-hidden
-                  className={`absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r ${e.gradient}`}
-                />
-                <div
-                  aria-hidden
-                  className={`absolute right-0 top-0 h-28 w-28 translate-x-8 -translate-y-8 rounded-full bg-gradient-to-br ${e.gradient} opacity-10 transition-transform duration-500 group-hover:scale-150`}
-                />
-
-                <div
-                  className={`relative flex h-14 w-14 items-center justify-center rounded-2xl ${e.chip} transition-all duration-300 group-hover:scale-105`}
-                >
-                  <e.icon className="h-7 w-7" />
+                {/* Contextual image header */}
+                <div className="relative h-40 overflow-hidden">
+                  <Image
+                    src={e.image}
+                    alt={e.title}
+                    fill
+                    sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  {/* Coloured accent bar per sector */}
+                  <span
+                    aria-hidden
+                    className={`absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r ${e.gradient}`}
+                  />
+                  <div
+                    aria-hidden
+                    className="absolute inset-0 bg-gradient-to-t from-graphite-950/60 via-graphite-950/10 to-transparent"
+                  />
+                  {/* Icon overlapping the image */}
+                  <div
+                    className={`absolute -bottom-6 left-7 flex h-14 w-14 items-center justify-center rounded-2xl ${e.chip} shadow-soft ring-4 ring-white transition-transform duration-300 group-hover:scale-105 dark:ring-graphite-900`}
+                  >
+                    <e.icon className="h-7 w-7" />
+                  </div>
                 </div>
-                <h3 className="relative mt-6 text-xl font-semibold text-graphite-900 dark:text-white">
-                  {e.title}
-                </h3>
-                <p className="relative mt-3 text-sm leading-relaxed text-graphite-600 dark:text-graphite-300">
-                  {e.short}
-                </p>
 
-                {detailed && (
-                  <ul className="relative mt-5 space-y-2.5 border-t border-graphite-100 pt-5 dark:border-white/10">
-                    {e.points.map((point) => (
-                      <li
-                        key={point}
-                        className="flex items-start gap-2.5 text-sm text-graphite-700 dark:text-graphite-200"
-                      >
-                        <IconCheck className="mt-0.5 h-4 w-4 flex-none text-brand" />
-                        {point}
-                      </li>
-                    ))}
-                  </ul>
-                )}
+                <div className="flex flex-1 flex-col p-7 pt-10">
+                  <h3 className="text-xl font-semibold text-graphite-900 dark:text-white">
+                    {e.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-relaxed text-graphite-600 dark:text-graphite-300">
+                    {e.short}
+                  </p>
 
-                <span className="relative mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-brand transition-all group-hover:gap-2.5">
-                  En savoir plus
-                  <IconArrowRight className="h-4 w-4" />
-                </span>
+                  {detailed && (
+                    <ul className="mt-5 space-y-2.5 border-t border-graphite-100 pt-5 dark:border-white/10">
+                      {e.points.map((point) => (
+                        <li
+                          key={point}
+                          className="flex items-start gap-2.5 text-sm text-graphite-700 dark:text-graphite-200"
+                        >
+                          <IconCheck className="mt-0.5 h-4 w-4 flex-none text-brand" />
+                          {point}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+
+                  <span className="mt-auto inline-flex items-center gap-1.5 pt-6 text-sm font-medium text-brand transition-all group-hover:gap-2.5">
+                    En savoir plus
+                    <IconArrowRight className="h-4 w-4" />
+                  </span>
+                </div>
               </Link>
             </motion.article>
           ))}

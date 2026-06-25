@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { ComponentProps, ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
-type Variant = "primary" | "secondary" | "outline" | "ghost";
+type Variant = "primary" | "secondary" | "outline" | "ghost" | "glass";
 type Size = "sm" | "md" | "lg";
 
 const variants: Record<Variant, string> = {
@@ -14,6 +14,9 @@ const variants: Record<Variant, string> = {
     "border border-brand bg-white text-brand hover:bg-brand hover:text-white hover:shadow-glow focus-visible:ring-brand dark:bg-transparent dark:text-brand-300 dark:border-brand-400/70 dark:hover:bg-brand dark:hover:text-white dark:hover:border-brand",
   ghost:
     "text-graphite-700 hover:text-brand hover:bg-brand-50 focus-visible:ring-brand dark:text-graphite-200 dark:hover:bg-white/5",
+  // Translucent glass button for use on dark / photographic backgrounds.
+  glass:
+    "border border-white/30 bg-white/10 text-white backdrop-blur-sm hover:bg-white hover:text-graphite-900 focus-visible:ring-white",
 };
 
 const sizes: Record<Size, string> = {

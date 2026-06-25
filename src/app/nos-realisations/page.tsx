@@ -28,6 +28,7 @@ export default function RealisationsPage() {
           { label: "Accueil", href: "/" },
           { label: "Nos Réalisations" },
         ]}
+        image="/images/succes-projet.png"
       />
       <Projects showHeading={false} showCta={false} />
       <CTASection />

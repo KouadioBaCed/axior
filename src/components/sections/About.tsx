@@ -3,7 +3,9 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/Button";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { ParallaxImage } from "@/components/ui/ParallaxImage";
 import { IconArrowRight, IconLayers, IconShield, IconChart } from "@/components/icons";
+import { images } from "@/lib/images";
 import { fadeUp, staggerContainer, viewportOnce } from "@/lib/motion";
 
 const pillars = [
@@ -67,6 +69,25 @@ export function About() {
           viewport={viewportOnce}
           className="grid gap-5 sm:grid-cols-2"
         >
+          <motion.div
+            variants={fadeUp}
+            className="relative col-span-full h-52 overflow-hidden rounded-2xl shadow-card ring-1 ring-graphite-900/5 sm:h-60"
+          >
+            <ParallaxImage
+              src={images.reunionPlans.src}
+              alt={images.reunionPlans.alt}
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              className="absolute inset-0"
+              strength={8}
+            />
+            <div
+              aria-hidden
+              className="absolute inset-0 bg-gradient-to-t from-graphite-950/55 to-transparent"
+            />
+            <span className="absolute bottom-4 left-5 rounded-full bg-white/15 px-3 py-1 text-xs font-semibold text-white backdrop-blur-sm">
+              Une équipe, cinq expertises
+            </span>
+          </motion.div>
           {pillars.map((p, i) => (
             <motion.div
               key={p.title}

@@ -22,6 +22,7 @@ export const expertises = [
   {
     slug: "btp-genie-civil",
     icon: IconBuilding,
+    image: "/Cinq%20secteurs/btp-genie-civil.png",
     title: "BTP & Génie Civil",
     tagline: "Bâtir des ouvrages durables",
     short:
@@ -57,6 +58,7 @@ export const expertises = [
   {
     slug: "electricite-energie",
     icon: IconBolt,
+    image: "/Cinq%20secteurs/electricite-energie.png",
     title: "Électricité & Énergie",
     tagline: "Une énergie fiable et maîtrisée",
     short:
@@ -92,6 +94,7 @@ export const expertises = [
   {
     slug: "immobilier",
     icon: IconHome,
+    image: "/Cinq%20secteurs/immobilier.png",
     title: "Immobilier",
     tagline: "Donner de la valeur à l’espace",
     short:
@@ -127,6 +130,7 @@ export const expertises = [
   {
     slug: "agro-industrie",
     icon: IconLeaf,
+    image: "/Cinq%20secteurs/agro-industrie.png",
     title: "Agro-industrie",
     tagline: "Valoriser les filières locales",
     short:
@@ -162,6 +166,7 @@ export const expertises = [
   {
     slug: "commerce-import-export",
     icon: IconGlobe,
+    image: "/Cinq%20secteurs/commerce-import-export.png",
     title: "Commerce & Import-Export",
     tagline: "Connecter les marchés",
     short:
@@ -248,6 +253,7 @@ export const methodology = [
   {
     step: "01",
     icon: IconSearch,
+    image: "/images/presentation-client.png",
     title: "Écoute & diagnostic",
     description:
       "Nous analysons vos besoins, votre contexte et vos contraintes pour cadrer précisément le projet.",
@@ -255,6 +261,7 @@ export const methodology = [
   {
     step: "02",
     icon: IconPencil,
+    image: "/images/analyse-planification.png",
     title: "Études & conception",
     description:
       "Nos équipes conçoivent une solution sur mesure, chiffrée, optimisée techniquement et financièrement.",
@@ -262,6 +269,7 @@ export const methodology = [
   {
     step: "03",
     icon: IconCog,
+    image: "/images/suivi-avancement.png",
     title: "Réalisation & pilotage",
     description:
       "Nous exécutons et pilotons le projet avec un suivi rigoureux des coûts, des délais et de la qualité.",
@@ -269,6 +277,7 @@ export const methodology = [
   {
     step: "04",
     icon: IconTruck,
+    image: "/images/succes-projet.png",
     title: "Livraison & suivi",
     description:
       "Nous livrons un ouvrage conforme et assurons un accompagnement durable après la mise en service.",
@@ -312,6 +321,7 @@ export const stats = [
 export const projects = [
   {
     slug: "complexe-residentiel-grand-bassam",
+    image: "/images/signature-partenariat.png",
     title: "Complexe résidentiel — Grand-Bassam",
     sector: "Immobilier & BTP",
     year: "2025",
@@ -323,6 +333,7 @@ export const projects = [
   },
   {
     slug: "centrale-solaire-industrielle",
+    image: "/images/analyse-planification.png",
     title: "Centrale solaire industrielle",
     sector: "Électricité & Énergie",
     year: "2025",
@@ -334,6 +345,7 @@ export const projects = [
   },
   {
     slug: "plateforme-logistique-import-export",
+    image: "/images/equipe-coordination.png",
     title: "Plateforme logistique import-export",
     sector: "Commerce & Logistique",
     year: "2024",
@@ -345,6 +357,7 @@ export const projects = [
   },
   {
     slug: "rehabilitation-voirie-urbaine",
+    image: "/images/visite-terrain.png",
     title: "Réhabilitation de voirie urbaine",
     sector: "BTP & Génie Civil",
     year: "2024",
@@ -356,6 +369,7 @@ export const projects = [
   },
   {
     slug: "unite-transformation-agro",
+    image: "/images/suivi-avancement.png",
     title: "Unité de transformation agro-industrielle",
     sector: "Agro-industrie",
     year: "2023",
@@ -367,6 +381,7 @@ export const projects = [
   },
   {
     slug: "immeuble-tertiaire-plateau",
+    image: "/images/conseil-strategie.png",
     title: "Immeuble tertiaire — Le Plateau",
     sector: "Immobilier & BTP",
     year: "2023",
@@ -381,6 +396,7 @@ export const projects = [
 export const news = [
   {
     slug: "axior-structure-cinq-poles",
+    image: "/images/equipe-poles.png",
     date: "2026-05-28",
     dateLabel: "28 mai 2026",
     category: "Vie du Groupe",
@@ -396,6 +412,7 @@ export const news = [
   },
   {
     slug: "mise-en-service-centrale-solaire",
+    image: "/images/opportunite.png",
     date: "2026-04-15",
     dateLabel: "15 avril 2026",
     category: "Énergie",
@@ -411,6 +428,7 @@ export const news = [
   },
   {
     slug: "axior-ancrage-grand-bassam",
+    image: "/images/visite-terrain.png",
     date: "2026-03-02",
     dateLabel: "2 mars 2026",
     category: "Immobilier",

@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { CTASection } from "@/components/sections/CTASection";
+import { ParallaxImage } from "@/components/ui/ParallaxImage";
 import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
 import { IconArrowRight, IconCalendar } from "@/components/icons";
 import { news } from "@/lib/data";
@@ -48,6 +50,19 @@ export default function ArticlePage({
       <section
         className={`relative overflow-hidden bg-gradient-to-br ${article.gradient} pt-32 pb-16 sm:pt-36 lg:pt-40 lg:pb-20`}
       >
+        <ParallaxImage
+          src={article.image}
+          alt=""
+          priority
+          sizes="100vw"
+          className="absolute inset-0"
+          imgClassName="opacity-30 mix-blend-overlay"
+          strength={9}
+        />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 bg-gradient-to-br from-graphite-950/50 via-transparent to-graphite-950/40"
+        />
         <div
           aria-hidden
           className="pointer-events-none absolute inset-0 bg-dots-light [background-size:22px_22px] opacity-25 [mask-image:radial-gradient(ellipse_70%_70%_at_50%_0%,#000,transparent)]"
@@ -81,6 +96,20 @@ export default function ArticlePage({
           </div>
         </div>
       </section>
+
+      {/* Featured visual bridging the header into the article */}
+      <div className="container relative z-10 -mt-10 sm:-mt-14">
+        <div className="mx-auto max-w-4xl overflow-hidden rounded-3xl shadow-card ring-1 ring-graphite-900/5">
+          <ParallaxImage
+            src={article.image}
+            alt={article.title}
+            sizes="(min-width: 896px) 896px, 100vw"
+            className="aspect-[16/9] sm:aspect-[2/1]"
+            strength={10}
+            overlayClassName="bg-gradient-to-t from-graphite-950/25 via-transparent to-transparent"
+          />
+        </div>
+      </div>
 
       {/* Body */}
       <section className="section">
@@ -118,9 +147,15 @@ export default function ArticlePage({
                     href={`/actualites/${o.slug}`}
                     className="group flex items-center gap-4 rounded-2xl border border-graphite-100 bg-white p-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-brand-200 hover:shadow-card dark:border-white/10 dark:bg-graphite-900"
                   >
-                    <span
-                      className={`h-12 w-12 flex-none rounded-xl bg-gradient-to-br ${o.gradient}`}
-                    />
+                    <span className="relative h-12 w-12 flex-none overflow-hidden rounded-xl">
+                      <Image
+                        src={o.image}
+                        alt={o.title}
+                        fill
+                        sizes="48px"
+                        className="object-cover"
+                      />
+                    </span>
                     <span className="min-w-0 flex-1">
                       <span className="block text-xs font-medium text-graphite-500 dark:text-graphite-400">
                         {o.dateLabel} · {o.category}

@@ -4,8 +4,18 @@ import { VisionMission } from "@/components/sections/VisionMission";
 import { Objectives } from "@/components/sections/Objectives";
 import { Methodology } from "@/components/sections/Methodology";
 import { CTASection } from "@/components/sections/CTASection";
+import { Carousel } from "@/components/ui/Carousel";
 import { Reveal } from "@/components/ui/Reveal";
+import { images, type Slide } from "@/lib/images";
 import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
+
+// Four photos that speak to the multisectoral, end-to-end profile of AXIOR.
+const profileSlides: Slide[] = [
+  { ...images.equipePoles, title: "", text: "" },
+  { ...images.collaboration, title: "", text: "" },
+  { ...images.leadership, title: "", text: "" },
+  { ...images.reunionStrategique, title: "", text: "" },
+];
 
 export const metadata: Metadata = {
   title: "Qui sommes-nous",
@@ -31,6 +41,7 @@ export default function AboutPage() {
           { label: "Accueil", href: "/" },
           { label: "Qui sommes-nous" },
         ]}
+        image="/images/equipe-poles.png"
       />
 
       <section className="section">
@@ -65,29 +76,40 @@ export default function AboutPage() {
             </Reveal>
 
             <Reveal className="lg:col-span-5" delay={0.1}>
-              <div className="rounded-2xl border border-graphite-100 bg-graphite-50/60 p-8 dark:border-white/10 dark:bg-graphite-900">
-                <h3 className="text-lg font-semibold text-graphite-900 dark:text-white">
-                  En bref
-                </h3>
-                <dl className="mt-6 space-y-5">
-                  {[
-                    { k: "Secteur", v: "Groupe multisectoriel" },
-                    { k: "Siège", v: "Grand-Bassam, Abidjan" },
-                    { k: "Implantation", v: "Côte d’Ivoire" },
-                    { k: "Approche", v: "Conception → Livraison" },
-                    { k: "Promesse", v: "L’Expert de vos projets" },
-                  ].map((row) => (
-                    <div
-                      key={row.k}
-                      className="flex items-center justify-between gap-4 border-b border-graphite-100 pb-4 last:border-0 last:pb-0 dark:border-white/10"
-                    >
-                      <dt className="text-sm text-graphite-500">{row.k}</dt>
-                      <dd className="text-right text-sm font-semibold text-graphite-900 dark:text-white">
-                        {row.v}
-                      </dd>
-                    </div>
-                  ))}
-                </dl>
+              <div className="relative isolate h-full min-h-[26rem] overflow-hidden rounded-2xl shadow-card">
+                {/* Animated photo carousel behind the facts card */}
+                <Carousel
+                  slides={profileSlides}
+                  bare
+                  showCaptions={false}
+                  showArrows={false}
+                  autoPlayMs={4500}
+                  sizes="(min-width: 1024px) 42vw, 100vw"
+                  className="absolute inset-0"
+                  overlayClassName="bg-gradient-to-t from-graphite-950/92 via-graphite-950/70 to-graphite-950/45"
+                />
+                <div className="relative flex h-full flex-col justify-end p-8">
+                  <h3 className="text-lg font-semibold text-white">En bref</h3>
+                  <dl className="mt-6 space-y-4">
+                    {[
+                      { k: "Secteur", v: "Groupe multisectoriel" },
+                      { k: "Siège", v: "Grand-Bassam, Abidjan" },
+                      { k: "Implantation", v: "Côte d’Ivoire" },
+                      { k: "Approche", v: "Conception → Livraison" },
+                      { k: "Promesse", v: "L’Expert de vos projets" },
+                    ].map((row) => (
+                      <div
+                        key={row.k}
+                        className="flex items-center justify-between gap-4 border-b border-white/15 pb-4 last:border-0 last:pb-0"
+                      >
+                        <dt className="text-sm text-white/65">{row.k}</dt>
+                        <dd className="text-right text-sm font-semibold text-white">
+                          {row.v}
+                        </dd>
+                      </div>
+                    ))}
+                  </dl>
+                </div>
               </div>
             </Reveal>
           </div>

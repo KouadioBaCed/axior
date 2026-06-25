@@ -10,8 +10,8 @@ export function OrganizationJsonLd() {
     slogan: siteConfig.slogan,
     description: siteConfig.description,
     url: siteConfig.url,
-    logo: `${siteConfig.url}/logo/Image3.jpg`,
-    image: `${siteConfig.url}/logo/Image3.jpg`,
+    logo: `${siteConfig.url}/logo/Image3.png`,
+    image: `${siteConfig.url}/logo/Image3.png`,
     email: siteConfig.email,
     telephone: siteConfig.phone,
     address: {

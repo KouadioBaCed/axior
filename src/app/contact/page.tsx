@@ -1,9 +1,16 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { PageHeader } from "@/components/sections/PageHeader";
 import { ContactForm } from "@/components/sections/ContactForm";
 import { Reveal } from "@/components/ui/Reveal";
 import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
-import { IconPhone, IconMail, IconPin, IconGlobe } from "@/components/icons";
+import {
+  IconPhone,
+  IconMail,
+  IconPin,
+  IconGlobe,
+  IconClock,
+} from "@/components/icons";
 import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -26,7 +33,7 @@ const infos = [
     label: "Téléphone",
     value: siteConfig.phone,
     href: `tel:${siteConfig.phoneHref}`,
-    sub: "Lun – Ven, 8h – 18h",
+    sub: "Du lundi au samedi",
   },
   {
     icon: IconMail,
@@ -61,6 +68,7 @@ export default function ContactPage() {
           { label: "Accueil", href: "/" },
           { label: "Contact" },
         ]}
+        image="/images/accompagnement-personnalise.png"
       />
 
       <section className="section">
@@ -77,7 +85,29 @@ export default function ContactPage() {
                 </p>
               </Reveal>
 
-              <div className="mt-8 grid gap-4 sm:grid-cols-2">
+              <Reveal delay={0.05} className="mt-8">
+                <div className="relative h-48 overflow-hidden rounded-2xl border border-graphite-100 shadow-soft sm:h-56 dark:border-white/10">
+                  <Image
+                    src="/images/visite-terrain.png"
+                    alt="Les équipes AXIOR à l’écoute de leurs clients"
+                    fill
+                    sizes="(min-width: 1024px) 40vw, 100vw"
+                    className="object-cover"
+                  />
+                  <div
+                    aria-hidden
+                    className="pointer-events-none absolute inset-0 bg-gradient-to-t from-brand-900/65 via-brand-900/10 to-transparent"
+                  />
+                  <div className="absolute inset-x-0 bottom-0 flex items-center gap-2 p-5 text-white">
+                    <IconPin className="h-5 w-5" />
+                    <span className="text-sm font-semibold">
+                      Siège · {siteConfig.address.line}
+                    </span>
+                  </div>
+                </div>
+              </Reveal>
+
+              <div className="mt-6 grid gap-4 sm:grid-cols-2">
                 {infos.map((info, i) => (
                   <Reveal key={info.label} delay={i * 0.05}>
                     <a
@@ -106,6 +136,40 @@ export default function ContactPage() {
                   </Reveal>
                 ))}
               </div>
+
+              <Reveal delay={0.1} className="mt-6">
+                <div className="rounded-2xl border border-graphite-100 bg-white p-6 dark:border-white/10 dark:bg-graphite-900">
+                  <div className="flex items-center gap-3">
+                    <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-50 text-brand">
+                      <IconClock className="h-5 w-5" />
+                    </span>
+                    <h3 className="font-display text-lg font-semibold text-graphite-900 dark:text-white">
+                      Horaires d’ouverture
+                    </h3>
+                  </div>
+                  <ul className="mt-5 divide-y divide-graphite-100 dark:divide-white/10">
+                    {siteConfig.hours.map((h) => (
+                      <li
+                        key={h.days}
+                        className="flex items-center justify-between py-2.5 text-sm"
+                      >
+                        <span className="text-graphite-600 dark:text-graphite-300">
+                          {h.days}
+                        </span>
+                        <span
+                          className={
+                            h.time === "Fermé"
+                              ? "font-medium text-graphite-400"
+                              : "font-semibold text-graphite-900 dark:text-white"
+                          }
+                        >
+                          {h.time}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </Reveal>
 
               <Reveal delay={0.15} className="mt-6">
                 <div className="overflow-hidden rounded-2xl border border-graphite-100 shadow-soft dark:border-white/10">

@@ -6,6 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "clean": "node -e \"const fs=require('fs');['.next','node_modules/.cache'].forEach(d=>fs.rmSync(d,{recursive:true,force:true}))\"",
+    "share": "npm run clean && next build && next start",
     "lint": "next lint"
   },
   "dependencies": {

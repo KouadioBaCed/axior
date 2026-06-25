@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
@@ -54,13 +55,16 @@ export function Projects({
               <div
                 className={`relative flex h-44 items-end overflow-hidden bg-gradient-to-br ${p.gradient} p-6`}
               >
+                <Image
+                  src={p.image}
+                  alt={p.title}
+                  fill
+                  sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
                 <div
                   aria-hidden
-                  className="absolute inset-0 bg-grid-light [background-size:28px_28px] opacity-20"
-                />
-                <span
-                  aria-hidden
-                  className="pointer-events-none absolute -right-8 -top-8 h-28 w-28 rounded-full bg-white/15 blur-2xl"
+                  className="absolute inset-0 bg-gradient-to-t from-graphite-950/80 via-graphite-950/20 to-graphite-950/10"
                 />
                 <div className="relative flex w-full items-center justify-between">
                   <span className="rounded-full bg-white/15 px-3 py-1 text-xs font-semibold text-white backdrop-blur-sm">

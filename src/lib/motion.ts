@@ -30,4 +30,32 @@ export const scaleIn: Variants = {
   },
 };
 
+export const slideInLeft: Variants = {
+  hidden: { opacity: 0, x: -48 },
+  show: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] },
+  },
+};
+
+export const slideInRight: Variants = {
+  hidden: { opacity: 0, x: 48 },
+  show: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] },
+  },
+};
+
+// Subtle zoom-out reveal, ideal for framed photos coming into view.
+export const zoomIn: Variants = {
+  hidden: { opacity: 0, scale: 1.08 },
+  show: {
+    opacity: 1,
+    scale: 1,
+    transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] },
+  },
+};
+
 export const viewportOnce = { once: true, amount: 0.25 } as const;

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Logo } from "@/components/Logo";
 import { IconPhone, IconMail, IconPin, IconArrowRight } from "@/components/icons";
 import { navLinks, siteConfig } from "@/lib/site";
@@ -14,8 +15,8 @@ export function Footer() {
           <div className="lg:col-span-4">
             <Logo />
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-graphite-600 dark:text-graphite-300">
-              {siteConfig.slogan}. AXIOR accompagne vos projets multisectoriels,
-              de la conception à la livraison, avec exigence et proximité.
+              {siteConfig.slogan}. AXIOR accompagne vos projets, de la conception
+              à la livraison, avec exigence et proximité.
             </p>
             <div className="mt-6 space-y-3 text-sm">
               <a
@@ -44,16 +45,22 @@ export function Footer() {
               Navigation
             </h3>
             <ul className="mt-5 space-y-3">
-              {navLinks.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-graphite-600 transition-colors hover:text-brand dark:text-graphite-300"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
+              {navLinks
+                .flatMap((link) =>
+                  link.menu === "axior"
+                    ? link.children ?? []
+                    : [{ label: link.label, href: link.href }],
+                )
+                .map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      className="text-sm text-graphite-600 transition-colors hover:text-brand dark:text-graphite-300"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
             </ul>
           </div>
 
@@ -79,7 +86,20 @@ export function Footer() {
             <h3 className="text-sm font-semibold text-graphite-900 dark:text-white">
               Parlons de votre projet
             </h3>
-            <p className="mt-5 text-sm leading-relaxed text-graphite-600 dark:text-graphite-300">
+            <div className="relative mt-5 h-32 overflow-hidden rounded-2xl border border-graphite-100 shadow-soft dark:border-white/10">
+              <Image
+                src="/images/equipe-poles.png"
+                alt="L’équipe AXIOR et ses cinq pôles d’expertise"
+                fill
+                sizes="(min-width: 1024px) 25vw, 100vw"
+                className="object-cover"
+              />
+              <div
+                aria-hidden
+                className="pointer-events-none absolute inset-0 bg-gradient-to-t from-brand-900/55 to-transparent"
+              />
+            </div>
+            <p className="mt-4 text-sm leading-relaxed text-graphite-600 dark:text-graphite-300">
               Une idée, un besoin, un défi&nbsp;? Nos équipes vous répondent
               rapidement.
             </p>

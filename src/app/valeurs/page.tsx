@@ -29,6 +29,7 @@ export default function ValuesPage() {
           { label: "Accueil", href: "/" },
           { label: "Nos valeurs" },
         ]}
+        image="/images/collaboration-multisectorielle.png"
       />
 
       <section className="section">

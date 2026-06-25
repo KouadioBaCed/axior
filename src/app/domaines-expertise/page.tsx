@@ -29,6 +29,7 @@ export default function ExpertisePage() {
           { label: "Accueil", href: "/" },
           { label: "Domaines d’expertise" },
         ]}
+        image="/images/equipe-multidisciplinaire.png"
       />
       <ExpertiseGrid detailed showHeading={false} showCta={false} />
       <Projects limit={3} tint />

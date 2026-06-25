@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { ParallaxImage } from "@/components/ui/ParallaxImage";
 import { IconArrowRight, IconCheck } from "@/components/icons";
 import { expertises } from "@/lib/data";
 import { fadeUp, staggerContainer, viewportOnce } from "@/lib/motion";
@@ -19,6 +20,15 @@ export function ExpertiseDetail({ slug }: { slug: string }) {
       <section
         className={`relative overflow-hidden bg-gradient-to-br ${expertise.gradient} pt-32 pb-20 sm:pt-36 lg:pt-40 lg:pb-24`}
       >
+        <ParallaxImage
+          src={expertise.image}
+          alt=""
+          priority
+          sizes="100vw"
+          className="absolute inset-0"
+          imgClassName="opacity-25 mix-blend-overlay"
+          strength={9}
+        />
         <div
           aria-hidden
           className="pointer-events-none absolute inset-0 bg-grid-light opacity-[0.12] [background-size:40px_40px] [mask-image:radial-gradient(ellipse_70%_70%_at_50%_0%,#000,transparent)]"

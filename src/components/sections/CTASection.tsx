@@ -2,8 +2,10 @@
 
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/Button";
+import { ParallaxImage } from "@/components/ui/ParallaxImage";
 import { IconArrowRight, IconPhone } from "@/components/icons";
 import { siteConfig } from "@/lib/site";
+import { images } from "@/lib/images";
 import { fadeUp, viewportOnce } from "@/lib/motion";
 
 export function CTASection() {
@@ -17,6 +19,18 @@ export function CTASection() {
           viewport={viewportOnce}
           className="relative overflow-hidden rounded-3xl bg-brand-mesh px-6 py-16 text-center shadow-glow sm:px-12 lg:px-16 lg:py-20"
         >
+          <ParallaxImage
+            src={images.succes.src}
+            alt=""
+            sizes="(min-width: 1024px) 1024px, 100vw"
+            className="absolute inset-0"
+            imgClassName="opacity-20 mix-blend-overlay"
+            strength={6}
+          />
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-0 bg-gradient-to-br from-brand-900/40 via-transparent to-brand-950/50"
+          />
           <div
             aria-hidden
             className="pointer-events-none absolute inset-0 bg-grid-light [background-size:48px_48px] opacity-[0.12] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_50%,#000,transparent)]"

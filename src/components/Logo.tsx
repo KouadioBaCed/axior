@@ -17,7 +17,7 @@ export function Logo({
       className={cn("inline-flex items-center", className)}
     >
       <Image
-        src="/logo/Image3.jpg"
+        src="/logo/Image3.png"
         alt={`Logo ${siteConfig.name} — ${siteConfig.slogan}`}
         width={1320}
         height={495}

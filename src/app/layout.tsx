@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     description: siteConfig.description,
     images: [
       {
-        url: "/logo/Image3.jpg",
+        url: "/logo/Image3.png",
         width: 1320,
         height: 500,
         alt: `${siteConfig.name} — ${siteConfig.slogan}`,
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `${siteConfig.name} — ${siteConfig.slogan}`,
     description: siteConfig.description,
-    images: ["/logo/Image3.jpg"],
+    images: ["/logo/Image3.png"],
   },
   robots: {
     index: true,
@@ -74,8 +74,8 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: "/logo/Image3.jpg",
-    apple: "/logo/Image3.jpg",
+    icon: "/logo/Image3.png",
+    apple: "/logo/Image3.png",
   },
   category: "business",
 };

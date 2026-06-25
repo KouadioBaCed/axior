@@ -17,13 +17,34 @@ export const siteConfig = {
   },
   // Approx. coordinates for Grand-Bassam, used for the map embed.
   map: "https://www.google.com/maps?q=Grand-Bassam,+C%C3%B4te+d%27Ivoire&output=embed",
+  // Opening hours, surfaced on the contact page and footer.
+  hours: [
+    { days: "Lundi – Vendredi", time: "8h – 18h" },
+    { days: "Samedi", time: "8h – 12h30" },
+    { days: "Dimanche", time: "Fermé" },
+  ],
   locale: "fr_FR",
 } as const;
 
+import type { ComponentType, SVGProps } from "react";
 import { expertises } from "./data";
+import {
+  IconSparkle,
+  IconShield,
+  IconBuilding,
+  IconMail,
+} from "@/components/icons";
 
-export type NavChild = { label: string; href: string };
-export type NavItem = { label: string; href: string; children?: NavChild[] };
+type IconComponent = ComponentType<SVGProps<SVGSVGElement>>;
+
+export type NavChild = { label: string; href: string; icon?: IconComponent };
+export type NavItem = {
+  label: string;
+  href: string;
+  children?: NavChild[];
+  /** Rendering style for the desktop dropdown. */
+  menu?: "expertises" | "axior";
+};
 
 const expertiseChildren: NavChild[] = expertises.map((e) => ({
   label: e.title,
@@ -36,11 +57,19 @@ export const navLinks: NavItem[] = [
   {
     label: "Expertises",
     href: "/domaines-expertise",
+    menu: "expertises",
     children: expertiseChildren,
   },
-  { label: "Réalisations", href: "/nos-realisations" },
   { label: "Actualités", href: "/actualites" },
-  { label: "Pourquoi AXIOR", href: "/pourquoi-axior" },
-  { label: "Valeurs", href: "/valeurs" },
-  { label: "Contact", href: "/contact" },
+  {
+    label: "AXIOR",
+    href: "/pourquoi-axior",
+    menu: "axior",
+    children: [
+      { label: "Pourquoi AXIOR", href: "/pourquoi-axior", icon: IconSparkle },
+      { label: "Nos valeurs", href: "/valeurs", icon: IconShield },
+      { label: "Nos réalisations", href: "/nos-realisations", icon: IconBuilding },
+      { label: "Contact", href: "/contact", icon: IconMail },
+    ],
+  },
 ];

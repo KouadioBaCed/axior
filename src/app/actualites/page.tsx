@@ -28,6 +28,7 @@ export default function ActualitesPage() {
           { label: "Accueil", href: "/" },
           { label: "Nos Actualités" },
         ]}
+        image="/images/presentation-client.png"
       />
       <NewsSection showHeading={false} showCta={false} />
       <CTASection />
