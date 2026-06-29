@@ -107,7 +107,7 @@ export const heroSlides: Slide[] = [
     text: "Des équipes pluridisciplinaires pour transformer vos ambitions en ouvrages concrets.",
   },
   {
-    ...images.collaboration,
+    ...images.accompagnement,
     title: "Un pilotage rigoureux",
     text: "Coûts, délais et qualité maîtrisés grâce à une gestion de projet exigeante.",
   },

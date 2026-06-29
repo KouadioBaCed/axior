@@ -77,6 +77,7 @@ export function Navbar() {
                   <Link
                     href={link.href}
                     aria-haspopup="true"
+                    onClick={(e) => e.currentTarget.blur()}
                     className={cn(
                       "relative flex items-center gap-1 rounded-full px-3.5 py-2 text-sm font-medium transition-colors",
                       active
@@ -105,6 +106,7 @@ export function Navbar() {
                               <Link
                                 key={child.href}
                                 href={child.href}
+                                onClick={(e) => e.currentTarget.blur()}
                                 className="flex items-start gap-3 rounded-xl px-3 py-2.5 transition-colors hover:bg-brand-50 dark:hover:bg-white/5"
                               >
                                 {Icon && (
@@ -132,6 +134,7 @@ export function Navbar() {
                               <Link
                                 key={child.href}
                                 href={child.href}
+                                onClick={(e) => e.currentTarget.blur()}
                                 className={cn(
                                   "group/item flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition-colors",
                                   childActive
@@ -152,6 +155,7 @@ export function Navbar() {
                       {isExpertise && (
                         <Link
                           href={link.href}
+                          onClick={(e) => e.currentTarget.blur()}
                           className="mt-1 flex items-center justify-between rounded-xl bg-graphite-50 px-3 py-2.5 text-sm font-medium text-graphite-700 transition-colors hover:text-brand dark:bg-white/5 dark:text-graphite-200"
                         >
                           Tous les domaines

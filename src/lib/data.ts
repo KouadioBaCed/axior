@@ -22,7 +22,7 @@ export const expertises = [
   {
     slug: "btp-genie-civil",
     icon: IconBuilding,
-    image: "/Cinq%20secteurs/btp-genie-civil.png",
+    image: "/secteurs/btp-genie-civil.jpeg",
     title: "BTP & Génie Civil",
     tagline: "Bâtir des ouvrages durables",
     short:
@@ -58,7 +58,7 @@ export const expertises = [
   {
     slug: "electricite-energie",
     icon: IconBolt,
-    image: "/Cinq%20secteurs/electricite-energie.png",
+    image: "/secteurs/electricite-energie.jpeg",
     title: "Électricité & Énergie",
     tagline: "Une énergie fiable et maîtrisée",
     short:
@@ -66,14 +66,14 @@ export const expertises = [
     description:
       "Nous concevons et déployons des installations électriques sûres et des solutions énergétiques performantes. De la basse tension au photovoltaïque, nous aidons nos clients à sécuriser leur alimentation et à réduire durablement leur facture.",
     points: [
-      "Installations basse & moyenne tension",
+      "Installations basse & haute tension",
       "Énergie solaire & efficacité énergétique",
       "Maintenance & dépannage",
     ],
     services: [
       {
         title: "Installations électriques",
-        text: "Réseaux basse et moyenne tension conçus pour la fiabilité et la conformité.",
+        text: "Réseaux basse et haute tension conçus pour la fiabilité et la conformité.",
       },
       {
         title: "Énergie solaire",
@@ -94,7 +94,7 @@ export const expertises = [
   {
     slug: "immobilier",
     icon: IconHome,
-    image: "/Cinq%20secteurs/immobilier.png",
+    image: "/secteurs/immobilier.jpeg",
     title: "Immobilier",
     tagline: "Donner de la valeur à l’espace",
     short:
@@ -130,7 +130,7 @@ export const expertises = [
   {
     slug: "agro-industrie",
     icon: IconLeaf,
-    image: "/Cinq%20secteurs/agro-industrie.png",
+    image: "/secteurs/agro-industrie.jpeg",
     title: "Agro-industrie",
     tagline: "Valoriser les filières locales",
     short:
@@ -166,7 +166,7 @@ export const expertises = [
   {
     slug: "commerce-import-export",
     icon: IconGlobe,
-    image: "/Cinq%20secteurs/commerce-import-export.png",
+    image: "/secteurs/commerce-import-export.jpeg",
     title: "Commerce & Import-Export",
     tagline: "Connecter les marchés",
     short:
@@ -253,7 +253,7 @@ export const methodology = [
   {
     step: "01",
     icon: IconSearch,
-    image: "/images/presentation-client.png",
+    image: "/images/reunion-plans.png",
     title: "Écoute & diagnostic",
     description:
       "Nous analysons vos besoins, votre contexte et vos contraintes pour cadrer précisément le projet.",
@@ -261,7 +261,7 @@ export const methodology = [
   {
     step: "02",
     icon: IconPencil,
-    image: "/images/analyse-planification.png",
+    image: "/images/accompagnement-realisation.png",
     title: "Études & conception",
     description:
       "Nos équipes conçoivent une solution sur mesure, chiffrée, optimisée techniquement et financièrement.",
@@ -269,7 +269,7 @@ export const methodology = [
   {
     step: "03",
     icon: IconCog,
-    image: "/images/suivi-avancement.png",
+    image: "/images/equipe-multidisciplinaire.png",
     title: "Réalisation & pilotage",
     description:
       "Nous exécutons et pilotons le projet avec un suivi rigoureux des coûts, des délais et de la qualité.",
@@ -277,7 +277,7 @@ export const methodology = [
   {
     step: "04",
     icon: IconTruck,
-    image: "/images/succes-projet.png",
+    image: "/images/signature-partenariat.png",
     title: "Livraison & suivi",
     description:
       "Nous livrons un ouvrage conforme et assurons un accompagnement durable après la mise en service.",
@@ -320,76 +320,44 @@ export const stats = [
 
 export const projects = [
   {
-    slug: "complexe-residentiel-grand-bassam",
-    image: "/images/signature-partenariat.png",
-    title: "Complexe résidentiel — Grand-Bassam",
+    slug: "villa-triplex-abatta-oribat",
+    image: "/images/new_battis.jpeg",
+    imageWidth: 1061,
+    imageHeight: 1008,
+    title: "Villa Triplex de Prestige — Abatta Oribat",
     sector: "Immobilier & BTP",
     year: "2025",
-    location: "Grand-Bassam",
+    location: "Abatta Oribat, Abidjan",
     description:
-      "Programme résidentiel haut de gamme, de la conception à la livraison clés en main.",
-    tags: ["Conception", "Gros œuvre", "Livraison clés en main"],
+      "Villa triplex haut standing de 14 pièces — 340 m² bâtis sur 468 m² : architecture contemporaine, piscine privée, sécurité connectée et vue lagune, conçue et livrée par AXIOR.",
+    tags: ["Villa triplex", "Haut standing", "Livraison clés en main"],
     gradient: "from-brand-500 to-brand-800",
-  },
-  {
-    slug: "centrale-solaire-industrielle",
-    image: "/images/analyse-planification.png",
-    title: "Centrale solaire industrielle",
-    sector: "Électricité & Énergie",
-    year: "2025",
-    location: "Abidjan",
-    description:
-      "Installation photovoltaïque pour réduire la facture énergétique d’un site de production.",
-    tags: ["Photovoltaïque", "Efficacité énergétique"],
-    gradient: "from-accent-500 to-accent-700",
-  },
-  {
-    slug: "plateforme-logistique-import-export",
-    image: "/images/equipe-coordination.png",
-    title: "Plateforme logistique import-export",
-    sector: "Commerce & Logistique",
-    year: "2024",
-    location: "Port d’Abidjan",
-    description:
-      "Structuration d’une chaîne d’approvisionnement internationale et de distribution locale.",
-    tags: ["Sourcing", "Logistique", "Distribution"],
-    gradient: "from-graphite-700 to-graphite-950",
-  },
-  {
-    slug: "rehabilitation-voirie-urbaine",
-    image: "/images/visite-terrain.png",
-    title: "Réhabilitation de voirie urbaine",
-    sector: "BTP & Génie Civil",
-    year: "2024",
-    location: "Abidjan",
-    description:
-      "Travaux de VRD et d’assainissement pour moderniser un axe urbain stratégique.",
-    tags: ["VRD", "Assainissement", "Génie civil"],
-    gradient: "from-brand-600 to-brand-900",
-  },
-  {
-    slug: "unite-transformation-agro",
-    image: "/images/suivi-avancement.png",
-    title: "Unité de transformation agro-industrielle",
-    sector: "Agro-industrie",
-    year: "2023",
-    location: "Sud Comoé",
-    description:
-      "Conception d’une unité de transformation valorisant une filière agricole locale.",
-    tags: ["Transformation", "Filière locale"],
-    gradient: "from-brand-400 to-brand-700",
-  },
-  {
-    slug: "immeuble-tertiaire-plateau",
-    image: "/images/conseil-strategie.png",
-    title: "Immeuble tertiaire — Le Plateau",
-    sector: "Immobilier & BTP",
-    year: "2023",
-    location: "Abidjan",
-    description:
-      "Réalisation d’un immeuble de bureaux haut standing au cœur du quartier d’affaires.",
-    tags: ["Tertiaire", "Haut standing"],
-    gradient: "from-brand-500 to-brand-800",
+    facts: [
+      { label: "Surface bâtie", value: "340 m²" },
+      { label: "Terrain", value: "468 m²" },
+      { label: "Niveaux", value: "R+3 (4 niveaux)" },
+      { label: "Composition", value: "14 pièces" },
+    ],
+    body: [
+      "Située dans le cadre exclusif de la zone résidentielle des 40 Hectares à Abatta Oribat, cette somptueuse villa triplex incarne la synergie parfaite entre audace architecturale, confort absolu et ingénierie de pointe. Conçue et réalisée de bout en bout par AXIOR, cette propriété haut standing s’impose comme une référence de la construction contemporaine en Côte d’Ivoire.",
+      "Déployant une surface bâtie de 340 m² sur une parcelle optimisée de 468 m², l’ouvrage se distingue par ses lignes géométriques épurées, ses jeux de volumes bicolores et ses larges ouvertures vitrées. Chaque espace a été pensé pour maximiser la lumière naturelle tout en offrant des perspectives imprenables sur la lagune environnante.",
+      "## Une distribution magistrale sur 4 niveaux",
+      "L’aménagement intérieur répond aux exigences des modes de vie les plus raffinés, segmentant avec fluidité les espaces de réception, d’intimité familiale et de bien-être.",
+      "## Rez-de-chaussée — Espaces de vie & utilités",
+      "Passé la guérite de sécurité, le hall d’entrée mène à un vaste séjour principal et sa salle à manger attenante. Ce niveau intègre une chambre d’amis autonome, une dépendance pour le personnel (boyerie) et un garage fermé pour deux grands véhicules. L’art culinaire y est mis à l’honneur grâce à un triple concept : une cuisine européenne moderne, un cellier de rangement et une cuisine africaine, complétés à l’extérieur par une grande cuisine d’été ouverte.",
+      "## R+1 — Le sanctuaire familial",
+      "Entièrement dédié à l’intimité de la famille, cet étage abrite une suite parentale majestueuse dotée de son propre dressing et d’un salon privé. Trois autres chambres entièrement autonomes offrent à chaque occupant un confort indépendant et sans compromis.",
+      "## R+2 — Détente & univers professionnel",
+      "Ce niveau propose une suite visiteur VIP au standing hôtelier, un grand bureau d’étude propice à la concentration, ainsi qu’une salle de sport privative s’ouvrant sur une vaste terrasse suspendue.",
+      "## R+3 — Le toit-terrasse panoramique",
+      "Couronnement de la villa, ce dernier niveau accueille un préau abrité adossé à une immense terrasse à ciel ouvert, offrant une vue lagunaire spectaculaire et un cadre idyllique pour les réceptions privées.",
+      "## Un resort privé extérieur et une sécurité connectée",
+      "La cour arrière a été pensée comme une extension naturelle du confort intérieur. Une superbe piscine aux lignes épurées y côtoie un espace bar entièrement aménagé, créant un cadre parfait pour les moments de détente en plein air.",
+      "Au-delà de son esthétique remarquable, la villa bénéficie d’une infrastructure technique et technologique de pointe. Pour garantir la sérénité totale de ses occupants, AXIOR a intégré un système complet de caméras de surveillance, une clôture électrique périphérique et un réseau informatique haut débit. La sécurité incendie est assurée par des détecteurs de fumée intelligents installés dans l’intégralité des pièces.",
+      "## Rigueur technique et conformité administrative",
+      "Fidèle à ses engagements de transparence et de rigueur, AXIOR a mené ce projet dans le strict respect des normes constructives et administratives locales. Le bien est adossé à un dossier juridique impeccable, incluant l’Arrêté de Concession Définitive (ACD) ainsi que le Permis de Construire en totale conformité.",
+      "Cette réalisation d’envergure réaffirme le savoir-faire d’AXIOR dans le pilotage de projets résidentiels d’exception et sa capacité à donner vie aux ambitions architecturales les plus exigeantes.",
+    ],
   },
 ] as const;
 
@@ -411,33 +379,26 @@ export const news = [
     gradient: "from-brand-600 to-brand-900",
   },
   {
-    slug: "mise-en-service-centrale-solaire",
-    image: "/images/opportunite.png",
-    date: "2026-04-15",
-    dateLabel: "15 avril 2026",
-    category: "Énergie",
-    title: "Mise en service d’une centrale solaire pour un site industriel",
-    excerpt:
-      "Notre pôle Énergie a livré une installation photovoltaïque qui réduit significativement la facture énergétique d’un client industriel.",
-    body: [
-      "Le pôle Électricité & Énergie d’AXIOR a achevé l’installation d’une centrale solaire destinée à alimenter un site de production industriel de la région d’Abidjan.",
-      "Le projet, mené de l’étude au raccordement, permet au client de réduire durablement sa dépendance au réseau et ses coûts d’exploitation, tout en s’inscrivant dans une démarche énergétique responsable.",
-      "Cette réalisation illustre la capacité du groupe à déployer des solutions énergétiques performantes et sur mesure.",
-    ],
-    gradient: "from-accent-500 to-accent-700",
-  },
-  {
-    slug: "axior-ancrage-grand-bassam",
-    image: "/images/visite-terrain.png",
-    date: "2026-03-02",
-    dateLabel: "2 mars 2026",
+    slug: "villa-exception-abatta-oribat",
+    image: "/images/new_battis.jpeg",
+    imageWidth: 1061,
+    imageHeight: 1008,
+    date: "2026-06-20",
+    dateLabel: "20 juin 2026",
     category: "Immobilier",
-    title: "Un nouveau programme résidentiel prend forme à Grand-Bassam",
+    title: "AXIOR signe une nouvelle réalisation d’exception à Abatta",
     excerpt:
-      "AXIOR poursuit son développement immobilier avec un programme résidentiel haut de gamme à Grand-Bassam.",
+      "Les équipes d’AXIOR sont fières de présenter leur dernière création : une magnifique villa triplex haut standing de 14 pièces livrée à Abatta Oribat (40 Ha). Architecture contemporaine, piscine privée, sécurité connectée et vue lagune : découvrez ce chantier d’exception qui incarne notre savoir-faire technique.",
     body: [
-      "Le pôle Immobilier d’AXIOR développe un nouveau complexe résidentiel haut de gamme à Grand-Bassam, conçu et réalisé en interne, de la conception à la livraison clés en main.",
-      "Ce programme confirme l’ancrage local du groupe et sa volonté de proposer des biens de qualité, durables et adaptés aux attentes du marché ivoirien.",
+      "C’est avec une grande fierté que les équipes d’AXIOR annoncent l’achèvement et la livraison d’un projet résidentiel d’envergure : une somptueuse villa triplex de haut standing, idéalement située au cœur de la zone prisée des 40 Hectares à Abatta. Ce chantier d’exception, d’une surface bâtie de 340 m² sur un terrain de 468 m², illustre parfaitement notre maîtrise globale des corps d’état techniques, de l’ingénierie civile aux finitions de prestige.",
+      "## Une prouesse architecturale et technique signée AXIOR",
+      "Conçue pour offrir une expérience de vie inégalée, la villa se déploie sur quatre niveaux intelligemment agencés. Le rez-de-chaussée accueille de vastes espaces de réception, un double concept de cuisine (européenne et africaine) et un garage double. Les niveaux supérieurs distribuent une suite parentale magistrale avec dressing, quatre suites autonomes supplémentaires, un bureau indépendant, ainsi qu’une salle de sport privative ouvrant sur de grandes terrasses suspendues.",
+      "Le point d’orgue de cette construction se situe au troisième étage, où un préau exclusif et une immense terrasse offrent une vue panoramique imprenable sur la lagune. À l’extérieur, la cour arrière a été aménagée comme un véritable resort privé, intégrant une piscine aux lignes épurées et un espace bar pour les réceptions en plein air.",
+      "## L’innovation et la sécurité au cœur de l’ouvrage",
+      "Fidèle à ses exigences de qualité, AXIOR a doté cette propriété des technologies les plus modernes en matière de confort et de sécurité connectée. L’intégralité du site bénéficie d’un réseau informatique dédié, d’un système de caméras de surveillance, d’une clôture électrique périphérique et de détecteurs de fumée intelligents installés dans chaque pièce.",
+      "Sur le plan administratif, comme pour l’ensemble de nos réalisations, le projet a été mené dans une conformité totale, adossé à un Permis de Construire et un Arrêté de Concession Définitive (ACD) validés.",
+      "Cette nouvelle livraison vient enrichir le portfolio d’AXIOR et réaffirme notre position de partenaire de premier plan dans l’ingénierie et la construction de bâtiments résidentiels, tertiaires et industriels en Côte d’Ivoire.",
+      "Vous avez un projet de construction ou d’aménagement de haut standing ? Faites confiance à l’expertise technique d’AXIOR. Contactez nos équipes dès aujourd’hui pour donner vie à vos ambitions.",
     ],
     gradient: "from-brand-500 to-brand-800",
   },

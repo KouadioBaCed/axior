@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { siteConfig } from "@/lib/site";
-import { expertises, news } from "@/lib/data";
+import { expertises, news, projects } from "@/lib/data";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date("2026-06-20");
@@ -18,8 +18,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const expertiseRoutes = expertises.map((e) => `/domaines-expertise/${e.slug}`);
   const newsRoutes = news.map((a) => `/actualites/${a.slug}`);
+  const realisationRoutes = projects.map((p) => `/nos-realisations/${p.slug}`);
 
-  return [...staticRoutes, ...expertiseRoutes, ...newsRoutes].map((path) => ({
+  return [
+    ...staticRoutes,
+    ...expertiseRoutes,
+    ...newsRoutes,
+    ...realisationRoutes,
+  ].map((path) => ({
     url: `${siteConfig.url}${path === "/" ? "" : path}`,
     lastModified,
     changeFrequency: "monthly",

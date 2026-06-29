@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { PageHeader } from "@/components/sections/PageHeader";
 import { ContactForm } from "@/components/sections/ContactForm";
 import { Reveal } from "@/components/ui/Reveal";
@@ -68,7 +67,7 @@ export default function ContactPage() {
           { label: "Accueil", href: "/" },
           { label: "Contact" },
         ]}
-        image="/images/accompagnement-personnalise.png"
+        image="/images/reunion-plans.png"
       />
 
       <section className="section">
@@ -85,29 +84,7 @@ export default function ContactPage() {
                 </p>
               </Reveal>
 
-              <Reveal delay={0.05} className="mt-8">
-                <div className="relative h-48 overflow-hidden rounded-2xl border border-graphite-100 shadow-soft sm:h-56 dark:border-white/10">
-                  <Image
-                    src="/images/visite-terrain.png"
-                    alt="Les équipes AXIOR à l’écoute de leurs clients"
-                    fill
-                    sizes="(min-width: 1024px) 40vw, 100vw"
-                    className="object-cover"
-                  />
-                  <div
-                    aria-hidden
-                    className="pointer-events-none absolute inset-0 bg-gradient-to-t from-brand-900/65 via-brand-900/10 to-transparent"
-                  />
-                  <div className="absolute inset-x-0 bottom-0 flex items-center gap-2 p-5 text-white">
-                    <IconPin className="h-5 w-5" />
-                    <span className="text-sm font-semibold">
-                      Siège · {siteConfig.address.line}
-                    </span>
-                  </div>
-                </div>
-              </Reveal>
-
-              <div className="mt-6 grid gap-4 sm:grid-cols-2">
+              <div className="mt-8 grid gap-4 sm:grid-cols-2">
                 {infos.map((info, i) => (
                   <Reveal key={info.label} delay={i * 0.05}>
                     <a

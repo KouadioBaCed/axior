@@ -14,29 +14,24 @@ const showcaseSlides: Slide[] = [
     text: "BTP, énergie, immobilier, agro-industrie et commerce international réunis sous un même toit.",
   },
   {
-    ...images.comitePilotage,
-    title: "Un pilotage rigoureux",
-    text: "Coûts, délais et qualité maîtrisés à chaque étape de vos projets.",
-  },
-  {
-    ...images.analyse,
+    ...images.reunionPlans,
     title: "Des études sur mesure",
     text: "Chaque projet est conçu, chiffré et optimisé avant le premier coup de pioche.",
   },
   {
-    ...images.suiviAvancement,
+    ...images.accompagnement,
+    title: "Un pilotage rigoureux",
+    text: "Coûts, délais et qualité maîtrisés à chaque étape de vos projets.",
+  },
+  {
+    ...images.equipeMultidisciplinaire,
     title: "Présents sur le terrain",
-    text: "Nous suivons l’avancement de chaque chantier au plus près de vos équipes.",
+    text: "Des équipes pluridisciplinaires au plus près de vos projets.",
   },
   {
     ...images.signature,
     title: "Des partenariats de confiance",
     text: "Nous engageons notre responsabilité, de l’idée jusqu’à la livraison.",
-  },
-  {
-    ...images.succes,
-    title: "Des projets livrés",
-    text: "Des ouvrages durables et des clients accompagnés dans la réussite.",
   },
 ];
 

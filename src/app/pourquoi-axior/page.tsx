@@ -29,7 +29,7 @@ export default function WhyPage() {
           { label: "Accueil", href: "/" },
           { label: "Pourquoi AXIOR" },
         ]}
-        image="/images/leadership-vision.png"
+        image="/images/reunion-plans.png"
       />
       <ReasonsNarrative />
       <Stats />

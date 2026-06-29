@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
@@ -46,14 +47,22 @@ export function Projects({
           viewport={viewportOnce}
           className="grid gap-6 md:grid-cols-2 lg:grid-cols-3"
         >
-          {items.map((p) => (
-            <motion.article
-              key={p.slug}
-              variants={fadeUp}
-              className="group flex flex-col overflow-hidden rounded-2xl border border-graphite-100 bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-card dark:border-white/10 dark:bg-graphite-900"
-            >
+          {items.map((p) => {
+            const ratio =
+              "imageWidth" in p && p.imageWidth && p.imageHeight
+                ? `${p.imageWidth} / ${p.imageHeight}`
+                : null;
+            return (
+            <motion.article key={p.slug} variants={fadeUp}>
+              <Link
+                href={`/nos-realisations/${p.slug}`}
+                className="group flex h-full flex-col overflow-hidden rounded-2xl border border-graphite-100 bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-card dark:border-white/10 dark:bg-graphite-900"
+              >
               <div
-                className={`relative flex h-44 items-end overflow-hidden bg-gradient-to-br ${p.gradient} p-6`}
+                className={`relative flex items-end overflow-hidden bg-gradient-to-br ${p.gradient} p-6 ${
+                  ratio ? "" : "h-44"
+                }`}
+                style={ratio ? { aspectRatio: ratio } : undefined}
               >
                 <Image
                   src={p.image}
@@ -97,9 +106,15 @@ export function Projects({
                     </span>
                   ))}
                 </div>
+                <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-brand transition-all group-hover:gap-2.5">
+                  Découvrir la réalisation
+                  <IconArrowRight className="h-4 w-4" />
+                </span>
               </div>
+              </Link>
             </motion.article>
-          ))}
+            );
+          })}
         </motion.div>
 
         {showCta && (

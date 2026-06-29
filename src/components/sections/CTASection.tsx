@@ -20,7 +20,7 @@ export function CTASection() {
           className="relative overflow-hidden rounded-3xl bg-brand-mesh px-6 py-16 text-center shadow-glow sm:px-12 lg:px-16 lg:py-20"
         >
           <ParallaxImage
-            src={images.succes.src}
+            src={images.signature.src}
             alt=""
             sizes="(min-width: 1024px) 1024px, 100vw"
             className="absolute inset-0"

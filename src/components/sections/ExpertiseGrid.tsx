@@ -45,8 +45,8 @@ export function ExpertiseGrid({
                 href={`/domaines-expertise/${e.slug}`}
                 className="card-surface group relative flex h-full flex-col overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:border-brand-200 hover:shadow-card"
               >
-                {/* Contextual image header */}
-                <div className="relative h-40 overflow-hidden">
+                {/* Contextual image header — full 3:2 sector photo */}
+                <div className="relative aspect-[3/2] overflow-hidden">
                   <Image
                     src={e.image}
                     alt={e.title}

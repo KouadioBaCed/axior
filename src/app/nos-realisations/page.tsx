@@ -28,7 +28,7 @@ export default function RealisationsPage() {
           { label: "Accueil", href: "/" },
           { label: "Nos Réalisations" },
         ]}
-        image="/images/succes-projet.png"
+        image="/images/signature-partenariat.png"
       />
       <Projects showHeading={false} showCta={false} />
       <CTASection />

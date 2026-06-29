@@ -12,9 +12,9 @@ import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
 // Four photos that speak to the multisectoral, end-to-end profile of AXIOR.
 const profileSlides: Slide[] = [
   { ...images.equipePoles, title: "", text: "" },
-  { ...images.collaboration, title: "", text: "" },
-  { ...images.leadership, title: "", text: "" },
-  { ...images.reunionStrategique, title: "", text: "" },
+  { ...images.signature, title: "", text: "" },
+  { ...images.accompagnement, title: "", text: "" },
+  { ...images.equipeMultidisciplinaire, title: "", text: "" },
 ];
 
 export const metadata: Metadata = {

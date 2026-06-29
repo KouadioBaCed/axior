@@ -99,15 +99,27 @@ export default function ArticlePage({
 
       {/* Featured visual bridging the header into the article */}
       <div className="container relative z-10 -mt-10 sm:-mt-14">
-        <div className="mx-auto max-w-4xl overflow-hidden rounded-3xl shadow-card ring-1 ring-graphite-900/5">
-          <ParallaxImage
-            src={article.image}
-            alt={article.title}
-            sizes="(min-width: 896px) 896px, 100vw"
-            className="aspect-[16/9] sm:aspect-[2/1]"
-            strength={10}
-            overlayClassName="bg-gradient-to-t from-graphite-950/25 via-transparent to-transparent"
-          />
+        <div className="mx-auto max-w-3xl overflow-hidden rounded-3xl shadow-card ring-1 ring-graphite-900/5">
+          {"imageWidth" in article ? (
+            <Image
+              src={article.image}
+              alt={article.title}
+              width={article.imageWidth}
+              height={article.imageHeight}
+              sizes="(min-width: 768px) 768px, 100vw"
+              priority
+              className="h-auto w-full"
+            />
+          ) : (
+            <ParallaxImage
+              src={article.image}
+              alt={article.title}
+              sizes="(min-width: 896px) 896px, 100vw"
+              className="aspect-[16/9] sm:aspect-[2/1]"
+              strength={10}
+              overlayClassName="bg-gradient-to-t from-graphite-950/25 via-transparent to-transparent"
+            />
+          )}
         </div>
       </div>
 
@@ -119,9 +131,18 @@ export default function ArticlePage({
               {article.excerpt}
             </p>
             <div className="mt-6 space-y-5 text-base leading-relaxed text-graphite-600 dark:text-graphite-300">
-              {article.body.map((paragraph, i) => (
-                <p key={i}>{paragraph}</p>
-              ))}
+              {article.body.map((paragraph, i) =>
+                paragraph.startsWith("## ") ? (
+                  <h2
+                    key={i}
+                    className="pt-3 font-display text-xl font-semibold text-graphite-900 dark:text-white"
+                  >
+                    {paragraph.slice(3)}
+                  </h2>
+                ) : (
+                  <p key={i}>{paragraph}</p>
+                ),
+              )}
             </div>
 
             <div className="mt-10 border-t border-graphite-100 pt-8 dark:border-white/10">

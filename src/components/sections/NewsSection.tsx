@@ -43,14 +43,22 @@ export function NewsSection({
           viewport={viewportOnce}
           className="grid gap-6 md:grid-cols-2 lg:grid-cols-3"
         >
-          {items.map((article) => (
+          {items.map((article) => {
+            const ratio =
+              "imageWidth" in article && article.imageWidth && article.imageHeight
+                ? `${article.imageWidth} / ${article.imageHeight}`
+                : null;
+            return (
             <motion.article key={article.slug} variants={fadeUp}>
               <Link
                 href={`/actualites/${article.slug}`}
                 className="group flex h-full flex-col overflow-hidden rounded-2xl border border-graphite-100 bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-card dark:border-white/10 dark:bg-graphite-900"
               >
                 <div
-                  className={`relative flex h-40 items-start justify-between overflow-hidden bg-gradient-to-br ${article.gradient} p-5`}
+                  className={`relative flex items-start justify-between overflow-hidden bg-gradient-to-br ${article.gradient} p-5 ${
+                    ratio ? "" : "h-40"
+                  }`}
+                  style={ratio ? { aspectRatio: ratio } : undefined}
                 >
                   <Image
                     src={article.image}
@@ -85,7 +93,8 @@ export function NewsSection({
                 </div>
               </Link>
             </motion.article>
-          ))}
+            );
+          })}
         </motion.div>
 
         {showCta && (

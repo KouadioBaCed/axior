@@ -11,7 +11,7 @@ export function Stats() {
     <section className="relative isolate overflow-hidden bg-graphite-950 py-16 sm:py-20">
       {/* Contextual background photo with gentle parallax, kept discreet */}
       <ParallaxImage
-        src={images.reunionStrategique.src}
+        src={images.equipeMultidisciplinaire.src}
         alt=""
         sizes="100vw"
         className="absolute inset-0"
